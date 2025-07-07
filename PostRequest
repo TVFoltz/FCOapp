@@ -1,0 +1,25 @@
+var http = require('http');
+var url = require('url');
+var QS = require('querystring');
+
+var siteUrl = url.parse('https://windbornesystems.com/career_applications.json');
+var param = { 'q': 'value1', 'param2': 'value2' };
+param = QS.stringify(param);
+
+var headers = {
+  "career_application": {
+    "name": "Tom Foltz",
+    "email": "tvfoltz@gmail.com",
+    "role": "Flight Control Operator",
+    "notes": "This sounds like a great opportunity, especially if I can work remotely. I'm often up at odd hours through the night and I've launched dozens of high-altitude student balloons.",
+    "submission_url": "https://github.com/TVFoltz/FCOapp/blob/main/README.md"
+    "portfolio_url": "https://github.com/TVFoltz/FCOapp/blob/main/Foltz%20desktop.png",
+    "resume_url": "https://github.com/TVFoltz/FCOapp/blob/main/Foltz%20resume%20-%20Dec%202024.pdf",
+  }
+};
+
+var site = http.createClient(siteUrl.port || 80, siteUrl.host);
+
+var request = site.request("POST", siteUrl.pathname, headers);
+request.write(param);
+request.end();
