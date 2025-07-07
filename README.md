@@ -1,5 +1,5 @@
 # 1. What's your favorite video game and why?
-dunno ff7?
+mario kart or vr bomb game - play with nora
 
 # 2. What gets your blood pumping?
 human spaceflight
